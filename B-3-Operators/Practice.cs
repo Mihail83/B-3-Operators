@@ -13,6 +13,12 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P1_9_NumbersAddition()
         {
+            
+            Console.WriteLine("Введите первое слагаемое");
+            int addend1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите второе слагаемое");
+            int addend2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Результат равен  {addend1+addend2}");
 
         }
 
@@ -23,6 +29,16 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P2_9_CheckResultAddition()
         {
+            Console.WriteLine("Введите первое слагаемое");
+            int addend1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите второе слагаемое");
+            int addend2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите результат");
+            int result = Convert.ToInt32(Console.ReadLine());
+            if (addend1 + addend2 == result)
+                Console.WriteLine("верно");
+            else
+                Console.WriteLine("неверно");
 
         }
 
@@ -33,7 +49,22 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P3_9_CheckResultAdditionWithTips()
         {
-
+            Console.WriteLine("Введите первое слагаемое");
+            int addend1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите второе слагаемое");
+            int addend2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите результат");
+            int result = Convert.ToInt32(Console.ReadLine());
+            if (addend1 + addend2 == result)
+                Console.WriteLine("верно");
+            else
+            {
+                Console.WriteLine("неверно");
+                if (addend1+addend2>result)
+                    Console.WriteLine("Введенный вариант меньше правильного ответа");
+                else
+                    Console.WriteLine("Введенный вариант больше правильного ответа");
+            }
         }
 
         /// <summary>
@@ -42,16 +73,77 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P4_9_CheckResultWithOperator()
         {
-
+            Console.WriteLine("Введите первое число");
+            int addend1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите + или - ");
+            char oper = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("Введите второе число");
+            int addend2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ваш ответ");
+            int result = Convert.ToInt32(Console.ReadLine());
+            int trueResult;
+            if (oper.Equals('+'))            
+                trueResult = addend1 + addend2;            
+            else if (oper.Equals('-'))            
+                trueResult = addend1 - addend2;            
+            else
+            {
+               Console.WriteLine("Неподдерживаемый оператор ");
+               return;
+            }                                 
+            if (trueResult == result)
+                Console.WriteLine("верно");
+            else
+            {
+                Console.WriteLine("неверно");
+                if (trueResult > result)
+                    Console.WriteLine("Введенный вариант меньше правильного ответа");
+                else
+                    Console.WriteLine("Введенный вариант больше правильного ответа");
+            }
         }
 
-        /// <summary>
+        // <summary>
         /// B3-P5/9. CheckResultWithAttemps. Изменить предыдущий алгоритм. 
         /// Пускай у пользователя будет 3 попытки чтобы решить эту задачу правильно
         /// </summary>
         public static void B3_P5_9_CheckResultWithAttemps()
         {
-
+          Console.WriteLine("Введите первое число");
+            int addend1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите + или - ");
+            char oper = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("Введите второе число");
+            int addend2 = Convert.ToInt32(Console.ReadLine());
+            int trueResult;
+            if (oper.Equals('+'))            
+                trueResult = addend1 + addend2;            
+            else if (oper.Equals('-'))            
+                trueResult = addend1 - addend2;            
+                else
+                {
+                     Console.WriteLine("Неподдерживаемый оператор ((");
+                     return;
+                }
+            for (int i = 1; i < 4; i++)
+            {
+                Console.WriteLine($"попытка № {i}");
+                Console.WriteLine("Ваш ответ");
+                int result = Convert.ToInt32(Console.ReadLine());
+                if (trueResult == result)
+                {
+                    Console.WriteLine("верно");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("неверно");
+                    if (trueResult > result)
+                        Console.WriteLine("Введенный вариант меньше правильного ответа");
+                    else
+                        Console.WriteLine("Введенный вариант больше правильного ответа");
+                }
+            }
         }
 
         /// <summary>
@@ -60,16 +152,43 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P6_9_FiveNumbersAddition()
         {
-
-        }
-
+            Console.WriteLine("Введите первое число");
+            int addend = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите второе число");
+            addend += Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите Третье число");
+            addend += Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите четвертое число");
+            addend += Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите пятое число");
+            addend += Convert.ToInt32(Console.ReadLine());            
+            for (int i = 1; i < 4; i++)
+            {
+                Console.WriteLine($"попытка № {i}");
+                Console.WriteLine("Ваш ответ?");
+                int result = Convert.ToInt32(Console.ReadLine());
+                if (addend == result)
+                {
+                    Console.WriteLine("верно");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("неверно");
+                    if (addend > result)
+                        Console.WriteLine("Введенный вариант меньше правильного ответа");
+                    else
+                        Console.WriteLine("Введенный вариант больше правильного ответа");
+                }
+            }
+        }        
         /// <summary>
         /// B3-P7/9. NumbersResultWithInfoIfCorrect. Изменить предыдущий алгоритм. 
         /// В конце алгоритма выводить информацию была ли задача решена правильно.
         /// </summary>
         public static void B3_P7_9_NumbersResultWithInfoIfCorrect()
         {
-
+            //уже реализовано   FiveNumbersAddition
         }
 
         /// <summary>
@@ -77,15 +196,28 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P8_9_CircleArea()
         {
-
-        }
-
-        /// <summary>
-        /// B3-P9/9. CreaditCalculator.Написать программу - калькулятор кредита на 1 год.
-        /// </summary>
-        public static void B3_P9_9_CreaditCalculator()
-        {
-
+            Console.WriteLine("Введите радиус круга");
+            float radius = Convert.ToSingle(Console.ReadLine());
+            Console.WriteLine($"Площадь круга с заданнным радиусом состовляет  {(Math.PI* radius* radius):f2}");
+        }        
+       /// <summary>
+       /// B3-P9/9. CreaditCalculator.Написать программу - калькулятор кредита на 1 год.
+       /// </summary>
+       public static void B3_P9_9_CreaditCalculator()
+       {
+            Console.WriteLine("Введите требуемую сумму кредита");
+            decimal basesum = Convert.ToDecimal(Console.ReadLine()) / 12;
+           
+            Console.WriteLine("Введите ставку кредита в процентах)");
+            decimal creditRate = Convert.ToDecimal(Console.ReadLine()) / 12 / 100;
+            decimal total =0;
+            for (int i = 1; i < 13; i++)
+            {
+                decimal monthpay = (basesum * (13-i)) * creditRate;
+                Console.WriteLine($"{i}  месяц - сумма: {(basesum+monthpay):f3}");
+                total += monthpay;
+            }            
+            Console.WriteLine($"Итого: {(basesum*12+total):f3}");
         }
     }
 }

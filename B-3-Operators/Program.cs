@@ -6,7 +6,7 @@ namespace B_3_Operators
     {
         static void Main(string[] args)
         {
-            Lesson.Examples();
+            //Lesson.Examples();
 
             //Practice.B3_P1_9_NumbersAddition();
             //Practice.B3_P2_9_CheckResultAddition();
@@ -18,7 +18,7 @@ namespace B_3_Operators
             //Practice.B3_P8_9_CircleArea();
             //Practice.B3_P9_9_CreaditCalculator();
 
-            Lesson.Examples();
+            //Lesson.Examples();
 
             Console.ReadLine();
         }
